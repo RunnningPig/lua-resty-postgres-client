@@ -32,7 +32,7 @@ __DATA__
                 "select id, flag from hello_world order by id asc limit 2 offset 2",
             }
 
-            local results, num_queries = pg:multi_query(queries);
+            local results, num_queries = pg:multi_query(queries)
             if not results then
                 ngx.say("failed to gets tow results: ", num_queries)
                 return
@@ -87,7 +87,7 @@ results compare: true
                 [[insert into "hello_world" ("name", "count") values ('hi', 100) returning "id"]],
             }
 
-            local results, num_queries = pg:multi_query(queries);
+            local results, num_queries = pg:multi_query(queries)
             if not results then
                 ngx.say("failed to gets three results: ", num_queries)
                 return
@@ -145,7 +145,7 @@ results compare: true
                 "update hello_world set flag = true",
             }
 
-            local results, num_queries = pg:multi_query(queries);
+            local results, num_queries = pg:multi_query(queries)
             if not results then
                 ngx.say("failed to does multiple updates: ", num_queries)
                 return
@@ -191,7 +191,7 @@ results compare: true
                 "select id, flag from hello_world where id = 3",
             }
 
-            local results, num_queries = pg:multi_query(queries);
+            local results, num_queries = pg:multi_query(queries)
             if not results then
                 ngx.say("failed to does mix update and select: ", num_queries)
                 return
@@ -239,7 +239,7 @@ results compare: true
                 "select id, flag from jello_world limit 1",
             }
 
-            local results, err, partial, num_queries = pg:multi_query(queries);
+            local results, err, partial, num_queries = pg:multi_query(queries)
 
             ngx.say("results: ", results)
             ngx.say("err: ", err)

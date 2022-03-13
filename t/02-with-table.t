@@ -31,7 +31,7 @@ __DATA__
                 insert into "hello_world" ("name", "count") values ('hi', 100)
             ]]
 
-            local res, err = pg:query(query);
+            local res, err = pg:query(query)
             if not res then
                 ngx.say("failed to inserts a row: ", err)
                 return
@@ -65,7 +65,7 @@ inserts a row: {"affected_rows":1}
                 insert into "hello_world" ("name", "count") values ('hi', 100) returning "id"
             ]]
 
-            local res, err = pg:query(query);
+            local res, err = pg:query(query)
             if not res then
                 ngx.say("failed to inserts a row: ", err)
                 return
@@ -99,7 +99,7 @@ inserts a row: {"1":{"id":1},"affected_rows":1}
                 select * from hello_world limit 2
             ]]
 
-            local res, err = pg:query(query);
+            local res, err = pg:query(query)
             if not res then
                 ngx.say("failed to selects from empty table: ", err)
                 return
@@ -133,7 +133,7 @@ selects from empty table: {}
                 select count(*) from hello_world
             ]]
 
-            local res, err = pg:query(query);
+            local res, err = pg:query(query)
             if not res then
                 ngx.say("failed to selects count: ", err)
                 return
@@ -167,7 +167,7 @@ selects count: [{"count":0}]
                 delete from hello_world
             ]]
 
-            local res, err = pg:query(query);
+            local res, err = pg:query(query)
             if not res then
                 ngx.say("failed to deletes nothing: ", err)
                 return
@@ -201,7 +201,7 @@ deletes nothing: {"affected_rows":0}
                 update "hello_world" SET "name" = 'blahblah'
             ]]
 
-            local res, err = pg:query(query);
+            local res, err = pg:query(query)
             if not res then
                 ngx.say("failed to update no rows: ", err)
                 return

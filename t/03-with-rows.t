@@ -31,7 +31,7 @@ __DATA__
                 select * from hello_world
             ]]
 
-            local res, err = pg:query(query);
+            local res, err = pg:query(query)
             if not res then
                 ngx.say("failed to select some rows: ", err)
                 return
@@ -67,7 +67,7 @@ type(res): table
                 update "hello_world" SET "name" = 'blahblah'
             ]]
 
-            local res, err = pg:query(query);
+            local res, err = pg:query(query)
             if not res then
                 ngx.say("failed to update rows: ", err)
                 return
@@ -79,7 +79,7 @@ type(res): table
                 select name from hello_world limit 1
             ]]
 
-            res, err = pg:query(query);
+            res, err = pg:query(query)
             if not res then
                 ngx.say("failed to select: ", err)
                 return
@@ -114,7 +114,7 @@ select name: blahblah
                 delete from "hello_world" where id = 1
             ]]
 
-            local res, err = pg:query(query);
+            local res, err = pg:query(query)
             if not res then
                 ngx.say("failed to delete a row: ", err)
                 return
@@ -126,7 +126,7 @@ select name: blahblah
                 select * from hello_world where id = 1
             ]]
 
-            res, err = pg:query(query);
+            res, err = pg:query(query)
             if not res then
                 ngx.say("failed to select: ", err)
                 return
@@ -160,7 +160,7 @@ select *: nil
                 truncate hello_world
             ]]
 
-            local res, err = pg:query(query);
+            local res, err = pg:query(query)
             if not res then
                 ngx.say("failed to truncate table: ", err)
                 return
@@ -195,7 +195,7 @@ truncate table: true
                     update "hello_world" SET "name" = 'blahblah' where id = 
                 ]] .. i
 
-                local res, err = pg:query(query);
+                local res, err = pg:query(query)
                 if not res then
                     ngx.say("failed to update #", i, " :", err)
                     return
@@ -207,7 +207,7 @@ truncate table: true
                     select * from hello_world
                 ]]
 
-                res, err = pg:query(query);
+                res, err = pg:query(query)
                 if not res then
                     ngx.say("failed to select *: ", err)
                     return

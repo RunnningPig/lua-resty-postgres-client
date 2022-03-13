@@ -26,7 +26,7 @@ __DATA__
 
             local query = "drop database if exists $TEST_NGINX_POSTGRES_DATABASE"
 
-            local res, err = pg:query(query);
+            local res, err = pg:query(query)
             if not res then
                 ngx.say("failed to drop database: ", err)
                 return
@@ -36,7 +36,7 @@ __DATA__
 
             query = "create database $TEST_NGINX_POSTGRES_DATABASE"
 
-            res, err = pg:query(query);
+            res, err = pg:query(query)
             if not res then
                 ngx.say("failed to create database: ", err)
                 return
@@ -69,7 +69,7 @@ create database: true
 
             local query = "select 1"
 
-            local res, err = pg:query(query);
+            local res, err = pg:query(query)
             if not res then
                 ngx.say("failed to select: ", err)
                 return
