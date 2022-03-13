@@ -60,7 +60,7 @@ server {
                 "select id, flag from jello_world limit 1",
             }
 
-            local results, err, partial, num_queries = pg:multi_query(queries);
+            local results, err, partial, num_queries = pg:multi_query(queries)
             if results then
                 -- all ok
                 for _, res in ipairs(results) do
@@ -153,7 +153,7 @@ See [pgmoon#query](https://github.com/leafo/pgmoon#result-num_queries--postgresq
 
 ## multi_query
 
-`syntax: results, err, partial, num_queries = postgres:query(query_string)`
+`syntax: results, err, partial, num_queries = pg:multi_query(queries)`
 
 Sends multiple queries at once. 
 
