@@ -11,6 +11,7 @@ lua-resty-postgres-client - Wrapper for [pgmoon](https://github.com/leafo/pgmoon
   - [new](https://github.com/RunnningPig/lua-resty-postgres-client#new)
   - [query](https://github.com/RunnningPig/lua-resty-postgres-client#query)
   - [multi_query](https://github.com/RunnningPig/lua-resty-postgres-client#multi_query)
+- [Installation](https://github.com/RunnningPig/lua-resty-postgres-client#installation)
 
 # Description
 
@@ -160,5 +161,13 @@ Sends multiple queries at once.
 Because Postgres executes each query at a time, earlier ones may succeed and further ones may fail. If there is a failure with multiple queries then the partial result and partial number of queries executed is returned after the error message.
 
 See [pgmoon#query](https://github.com/leafo/pgmoon#result-num_queries--postgresqueryquery_string) for details.
+
+[Back to TOC](https://github.com/RunnningPig/lua-resty-postgres-client#table-of-contents)
+
+# Installation
+
+```shell
+$ luarocks install lua-resty-postgres-client
+```
 
 [Back to TOC](https://github.com/RunnningPig/lua-resty-postgres-client#table-of-contents)
